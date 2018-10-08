@@ -1,0 +1,66 @@
+.house {
+  position: absolute
+  width: 5vw
+  height: 5vw
+  transition: transform 0.15s linear
+  cursor: pointer
+  transform-origin: bottom center
+
+  &:empty {
+    /* only when the house has no content */
+    background: red
+    border-radius: 100%
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  img {
+    width: 100%
+  }
+
+  &.stark {
+    top: 29.08%
+    left: 43%
+  }
+  &.tully {
+    top: 60%
+    left: 37.2%
+  }
+
+  &.targaryen {
+    top: 66%
+    left: 81%
+  }
+
+  &.lannister {
+    top: 67.4%
+    left: 12.6%
+  }
+
+  &.tyrell {
+    top: 81.4%
+    left: 26%
+  }
+
+  &.baratheon {
+    top: 77.4%
+    left: 76.2%
+  }
+
+  &.martell {
+    top: 92%
+    left: 84.5%
+  }
+
+  &.greyjoy {
+    top: 56.5%
+    left: 11.4%
+  }
+
+  &.arryn {
+    top: 52.9%
+    left: 65%
+  }
+}

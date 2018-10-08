@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Introduction</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+<div id="app">
+  <div class="map">
+    <div
+        class="house"
+        :class="house.name.toLowerCase()"
+        v-for="house in houses"
+    >
+      <img :src="house.sigil">
+    </div>
+  </div>
+</div>
+</body>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    houses: {
+      stark: {
+        name: 'Stark',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest'
+      },
+      tully: {
+        name: 'Tully',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest'
+      },
+      targaryen: {
+        name: 'Targaryen',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/4/43/House-Targaryen-Main-Shield.PNG/revision/latest'
+      },
+      lannister: {
+        name: 'Lannister',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest'
+      },
+      tyrell: {
+        name: 'Tyrell',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/c/cf/House-Tyrell-Main-Shield.PNG/revision/latest'
+      },
+      baratheon: {
+        name: 'Baratheon',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/0/00/House-Baratheon-Main-Shield.PNG/revision/latest'
+      },
+      martell: {
+        name: 'Martell',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/7/7e/House-Martell-Main-Shield.PNG/revision/latest'
+      },
+      greyjoy: {
+        name: 'Greyjoy',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/86/House-Greyjoy-Main-Shield.PNG/revision/latest'
+      },
+      arryn: {
+        name: 'Arryn',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/1/15/House-Arryn-Main-Shield.PNG/revision/latest'
+      }
+    }
+  }
+})
+</script>
+
+</html>
