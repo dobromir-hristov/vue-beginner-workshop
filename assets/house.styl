@@ -2,10 +2,11 @@
   position: absolute
   width: 5vw
   height: 5vw
-  transition: transform 0.15s linear
-  cursor: pointer
   transform-origin: bottom center
-
+  img {
+    cursor: pointer
+    def-transit(transform)
+  }
   &:empty {
     /* only when the house has no content */
     background: red
@@ -13,7 +14,9 @@
   }
 
   &:hover {
-    transform: scale(1.5);
+    > img {
+      transform: scale(1.2);
+    }
   }
 
   img {
@@ -62,5 +65,38 @@
   &.arryn {
     top: 52.9%
     left: 65%
+  }
+}
+
+.members {
+  background: hsl(0, 0, 100%)
+  border-radius: 2px
+  box-shadow: 0 2px 4px transparentify($black, .4)
+  overflow: auto
+  z-index: 5
+  position: absolute
+  left: 50%
+  width: 250px
+  max-height: 350px
+  transform: translateX(-50%)
+
+  &:empty {
+    min-height: 50px
+  }
+
+  .martell & {
+    top: auto
+    bottom: 100%
+  }
+
+  .member {
+    padding: .5rem 1rem
+    line-height: 2
+    cursor: pointer
+    def-transit()
+
+    &:hover {
+      background: $lightGray;
+    }
   }
 }

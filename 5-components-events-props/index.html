@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Introduction</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+<div id="app">
+  <div class="map" @click="currentHouse = null">
+    <house
+        v-for="(house, houseId) in houses"
+        :house="house"
+        :house-id="houseId"
+        :key="houseId"
+        :current-house="currentHouse"
+        @house-change="toggleCurrent"
+    ></house>
+  </div>
+</div>
+
+<script type="text/x-template" id="house-template">
+<div
+    class="house"
+    :class="houseId"
+    @click.stop="$emit('house-change', houseId)"
+>
+  <img :src="house.sigil">
+  <members :members="house.members" v-if="isVisible"></members>
+</div>
+</script>
+
+<script type="text/x-template" id="members-template">
+<div class="members">
+  <member
+      v-for="member in members"
+      :key="member"
+      :member="member"
+  ></member>
+</div>
+</script>
+
+<script type="text/x-template" id="member-template">
+<div class="member">{{ member }}</div>
+</script>
+
+<script>
+Vue.component('house', {
+  template: '#house-template',
+  props: {
+    house: Object,
+    currentHouse: String,
+    houseId: String
+  },
+  computed: {
+    isVisible () {
+      return this.currentHouse === this.houseId
+    }
+  }
+})
+
+Vue.component('members', {
+  props: ['members'],
+  template: '#members-template'
+})
+
+Vue.component('member', {
+  props: ['member'],
+  template: '#member-template'
+})
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    houses: {
+      stark: {
+        name: 'Stark',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest',
+        members: [
+          'Eddard Stark', 'Catelyn Stark', 'Robb Stark', 'Sansa Stark', 'Arya Stark', 'Bran Stark', 'Rickon Stark', 'Jon Snow'
+        ]
+      },
+      tully: {
+        name: 'Tully',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest',
+        members: [
+          'Catelyn Stark', 'Edmure Tully', 'Brynden Tully', 'Lysa Arryn', 'Roslin Tully', 'Hoster Tully'
+        ]
+      },
+      targaryen: {
+        name: 'Targaryen',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/4/43/House-Targaryen-Main-Shield.PNG/revision/latest',
+        members: [
+          'Daenerys Targaryen', 'Rhaegar Targaryen', 'Aerys II Targaryen', 'Aegon Targaryen', 'Viserys Targaryen', 'Aemon'
+        ]
+      },
+      lannister: {
+        name: 'Lannister',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest',
+        members: [
+          'Tyrion Lannister', 'Jaime Lannister', 'Tywin Lannister', 'Lancel Lannister', 'Kevan Lannister', 'Joanna Lannister'
+        ]
+      },
+      tyrell: {
+        name: 'Tyrell',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/c/cf/House-Tyrell-Main-Shield.PNG/revision/latest',
+        members: [
+          'Margaery Tyrell', 'Loras Tyrell', 'Olenna Tyrell', 'Mace Tyrell', 'Alerie Tyrell'
+        ]
+      },
+      baratheon: {
+        name: 'Baratheon',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/0/00/House-Baratheon-Main-Shield.PNG/revision/latest',
+        members: [
+          'Robert Baratheon', 'Stannis Baratheon', 'Renly Baratheon', 'Shireen Baratheon', 'Gendry', 'Selyse Baratheon'
+        ]
+      },
+      martell: {
+        name: 'Martell',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/7/7e/House-Martell-Main-Shield.PNG/revision/latest',
+        members: [
+          'Oberyn Martell', 'Elia Martell', 'Doran Martell', 'Nymeria Sand', 'Obara Sand', 'Trystane Martell'
+        ]
+      },
+      greyjoy: {
+        name: 'Greyjoy',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/86/House-Greyjoy-Main-Shield.PNG/revision/latest',
+        members: [
+          'Yara Greyjoy', 'Euron Greyjoy', 'Balon Greyjoy', 'Aeron Greyjoy', 'Rodrik Greyjoy', 'Maron Greyjoy', 'Alannys Greyjoy'
+        ]
+      },
+      arryn: {
+        name: 'Arryn',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/1/15/House-Arryn-Main-Shield.PNG/revision/latest',
+        members: [
+          'Jon Arryn', 'Lysa Arryn', 'Robin Arryn', 'Artys I Arryn', 'Aemma Arryn', 'Ronnel Arryn'
+        ]
+      }
+    },
+    currentHouse: null
+  },
+  methods: {
+    toggleCurrent (house) {
+      this.currentHouse = this.currentHouse === house ? null : house
+    }
+  }
+})
+</script>
+</body>
+</html>

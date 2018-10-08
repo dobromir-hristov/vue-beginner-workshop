@@ -1,7 +1,16 @@
+$black = #2b2b2b
+$lightGray = #eee
+def-transit(prop = all, time = .15s, ease = linear, delay = 0s)
+  transition: prop time ease delay
+
+@import "got-font.styl"
+
 body,
 html
   padding: 0
   margin: 0
+  font-family "Game of Thrones"
+  color: $black
 
 body
   min-width: 500px
@@ -13,3 +22,4 @@ body
   background: url("./map.jpg") top left / contain no-repeat
 
 @import "./house.styl"
+@import "./transitions.styl"
