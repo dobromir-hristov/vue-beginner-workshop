@@ -3,13 +3,11 @@
   transform-origin: bottom center
   img {
     cursor: pointer
+    width: 12vw
     def-transit()
-    +mobile() {
-      width: 10vw
-      height: 10vw
+    +desktop() {
+      width: 5vw
     }
-    width: 5vw
-    height: 5vw
   }
   &:empty {
     /* only when the house has no content */
@@ -23,10 +21,6 @@
     > img {
       transform: scale(1.2);
     }
-  }
-
-  img {
-    width: 100%
   }
 
   &.stark {

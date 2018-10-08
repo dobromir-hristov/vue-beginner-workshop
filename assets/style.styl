@@ -3,16 +3,14 @@ $lightGray = #eee
 @import "mixins.styl"
 @import "got-font.styl"
 
-body,
-html
+body, html
   padding: 0
   margin: 0
   font-family "Game of Thrones"
   color: $black
-
-  +mobile() {
-    font-size: 10px;
-  }
+  font-size: 12px
+  +desktop()
+    font-size: 16px
 
 body
   min-width: 500px
