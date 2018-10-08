@@ -1,3 +1,8 @@
+dropUp() {
+  top: auto
+  bottom: 100%
+}
+
 .house {
   position: absolute
   transform-origin: bottom center
@@ -86,8 +91,13 @@
   }
 
   .martell & {
-    top: auto
-    bottom: 100%
+    dropUp()
+  }
+
+  .tyrell &, .baratheon & {
+    +mobile() {
+      dropUp()
+    }
   }
 
   .member {
