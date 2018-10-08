@@ -27,7 +27,7 @@
 <script type="text/x-template" id="house-template">
 <div
     class="house"
-    :class="houseId"
+    :class="{ [houseId]:true, 'is-active': isVisible }"
     @click.stop="$emit('house-change', houseId)"
 >
   <img :src="house.sigil">

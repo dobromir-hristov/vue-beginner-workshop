@@ -1,0 +1,24 @@
+def-transit(prop = all, time = .15s, ease = linear, delay = 0s)
+  transition: prop time ease delay
+
+respond-below($width)
+  $width = $width - 1
+  media = 'all and (max-width: %s)' % $width
+  @media media
+    {block}
+
+respond-above($width)
+  media = 'all and (min-width: %s)' % $width
+  @media media
+    {block}
+
+respond-between($min-width, $max-width)
+  $max-width = $max-width - 1
+  media = 'all and (min-width: %s) and (max-width: %s)' % ($min-width $max-width)
+  @media media {
+    {block}
+  }
+
+mobile()
+  +respond-below(768px)
+    {block}

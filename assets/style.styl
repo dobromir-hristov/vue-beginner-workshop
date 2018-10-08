@@ -1,8 +1,6 @@
 $black = #2b2b2b
 $lightGray = #eee
-def-transit(prop = all, time = .15s, ease = linear, delay = 0s)
-  transition: prop time ease delay
-
+@import "mixins.styl"
 @import "got-font.styl"
 
 body,
@@ -11,6 +9,10 @@ html
   margin: 0
   font-family "Game of Thrones"
   color: $black
+
+  +mobile() {
+    font-size: 10px;
+  }
 
 body
   min-width: 500px
