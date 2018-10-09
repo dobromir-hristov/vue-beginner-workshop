@@ -7,31 +7,64 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue Introduction</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="https://angry-banach-940a4c.netlify.com/assets/styles/style.css">
 </head>
 
 <body>
 <div id="app">
   <div class="map" @click="currentHouse = null">
-    <div
-        class="house"
+    <house
         v-for="(house, houseId) in houses"
-        :class="houseId"
-        @click.stop="toggleCurrent(houseId)"
-    >
-      <img :src="house.sigil">
-      <div class="members" v-if="isVisible(houseId)">
-        <div
-            class="member"
-            v-for="member in house.members"
-        >
-          {{ member }}
-        </div>
-      </div>
-    </div>
+        :house="house"
+        :house-id="houseId"
+        :key="houseId"
+        :current-house="currentHouse"
+        @house-change="toggleCurrent"
+    ></house>
   </div>
 </div>
+
+<script type="text/x-template" id="house-template">
+<div
+    class="house"
+    :class="{ [houseId]:true, 'is-active': isVisible }"
+    @click.stop="$emit('house-change', houseId)"
+>
+  <img :src="house.sigil">
+  <members :members="house.members" v-if="isVisible"></members>
+</div>
+</script>
 <script>
+Vue.component('house', {
+  template: '#house-template',
+  props: {
+    house: Object,
+    currentHouse: String,
+    houseId: String
+  },
+  computed: {
+    isVisible () {
+      return this.currentHouse === this.houseId
+    }
+  }
+})
+
+Vue.component('members', {
+  props: ['members'],
+  template: `<div class="members">
+                <member
+                    v-for="member in members"
+                    :key="member"
+                    :member="member"
+                />
+             </div>`
+})
+
+Vue.component('member', {
+  props: ['member'],
+  template: '<div class="member">{{ member }}</div>'
+})
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -105,9 +138,6 @@ var app = new Vue({
   methods: {
     toggleCurrent (house) {
       this.currentHouse = this.currentHouse === house ? null : house
-    },
-    isVisible(house){
-      return this.currentHouse === house
     }
   }
 })

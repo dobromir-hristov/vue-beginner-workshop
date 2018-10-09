@@ -1,0 +1,28 @@
+.wrap
+  display flex
+  flex-flow column
+  justify-content: center
+  align-items: center
+  min-height 100vh
+
+.directory-wrap
+  width: 70%
+  display flex
+  justify-content space-between
+  align-items center
+  padding 2rem
+
+.directory-list
+  flex 1
+  line-height 3
+  list-style-type none
+  margin 0
+  padding 0
+  text-align center
+  a
+    color: $black
+    text-decoration none
+    def-transit()
+    &:hover
+      color $dark
+      text-decoration: underline

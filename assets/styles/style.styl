@@ -1,4 +1,7 @@
 $black = #2b2b2b
+$darkest = lighten($black, 10%)
+$darker = lighten($black, 20%)
+$dark = lighten($black, 30%)
 $lightGray = #eee
 @import "mixins.styl"
 @import "got-font.styl"
@@ -14,12 +17,15 @@ body, html
 
 body
   min-width: 500px
+  background: $lightGray;
 
 .map
   position: relative
   height: 0
   padding-bottom: 236.41%
-  background: url("./map.jpg") top left / contain no-repeat
+  background: url("../images/map.jpg") top left / contain no-repeat
 
-@import "./house.styl"
-@import "./transitions.styl"
+@import "home.styl"
+@import "grid.styl"
+@import "house.styl"
+@import "transitions.styl"
