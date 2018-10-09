@@ -37,3 +37,11 @@ Students who follow the course closely will not need to reach for the materials 
 ### Resources
 * [Vue Guide](https://vuejs.org/v2/guide/)
 * [Vue Style Guide](https://vuejs.org/v2/style-guide/)
+
+#### Special thanks to: 
+Elena Gancheva - for the support and exercise app idea
+
+Hristiyan Ivanov, Nedyalko Dyakov - for the support and workshop QA
+
+### License
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
