@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Router</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.js"></script>
+  <link rel="stylesheet" href="https://angry-banach-940a4c.netlify.com/assets/styles/style.css">
+</head>
+
+<body>
+<div id="app">
+  <router-view></router-view>
+</div>
+
+<script type="text/x-template" id="house-template">
+<div
+    class="house"
+    :class="{ [houseId]:true, 'is-active': isVisible }"
+    @click.stop="$emit('house-change', houseId)"
+>
+  <img :src="house.sigil">
+  <members :members="house.members" :houseId="currentHouse" v-if="isVisible"></members>
+</div>
+</script>
+
+<script type="text/x-template" id="westeros-page">
+<div class="map" @click="currentHouse = null">
+  <house
+      v-for="(house, houseId) in houses"
+      :house="house"
+      :house-id="houseId"
+      :key="houseId"
+      :current-house="currentHouse"
+      @house-change="toggleCurrent"
+  ></house>
+</div>
+</script>
+
+<script type="text/x-template" id="member-page">
+<div class="member-page">
+  <div>
+    {{ currentMember.name }}
+  </div>
+  <router-link to="/">Back To Map</router-link>
+</div>
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

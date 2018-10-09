@@ -16,6 +16,7 @@
     <div
         class="house"
         v-for="(house, houseId) in houses"
+        :key="houseId"
         :class="houseId"
         @click.stop="toggleCurrent(houseId)"
     >
@@ -24,8 +25,9 @@
         <div
             class="member"
             v-for="member in house.members"
+            :key="member.id"
         >
-          {{ member }}
+          {{ member.name }}
         </div>
       </div>
     </div>
@@ -46,63 +48,110 @@ var app = new Vue({
         name: 'Stark',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest',
         members: [
-          'Eddard Stark', 'Catelyn Stark', 'Robb Stark', 'Sansa Stark', 'Arya Stark', 'Bran Stark', 'Rickon Stark', 'Jon Snow'
+          { id: 'eddard-stark', name: 'Eddard Stark' },
+          { id: 'catelyn-stark', name: 'Catelyn Stark' },
+          { id: 'robb-stark', name: 'Robb Stark' },
+          { id: 'sansa-stark', name: 'Sansa Stark' },
+          { id: 'arya-stark', name: 'Arya Stark' },
+          { id: 'bran-stark', name: 'Bran Stark' },
+          { id: 'rickon-stark', name: 'Rickon Stark' },
+          { id: 'jon-snow', name: 'Jon Snow' }
         ]
       },
       tully: {
         name: 'Tully',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest',
         members: [
-          'Catelyn Stark', 'Edmure Tully', 'Brynden Tully', 'Lysa Arryn', 'Roslin Tully', 'Hoster Tully'
+          { id: 'catelyn-stark', name: 'Catelyn Stark' },
+          { id: 'edmure-tully', name: 'Edmure Tully' },
+          { id: 'brynden-tully', name: 'Brynden Tully' },
+          { id: 'lysa-arryn', name: 'Lysa Arryn' },
+          { id: 'roslin-tully', name: 'Roslin Tully' },
+          { id: 'hoster-tully', name: 'Hoster Tully' }
         ]
       },
       targaryen: {
         name: 'Targaryen',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/4/43/House-Targaryen-Main-Shield.PNG/revision/latest',
         members: [
-          'Daenerys Targaryen', 'Rhaegar Targaryen', 'Aerys II Targaryen', 'Aegon Targaryen', 'Viserys Targaryen', 'Aemon'
+          { id: 'daenerys-targaryen', name: 'Daenerys Targaryen' },
+          { id: 'rhaegar-targaryen', name: 'Rhaegar Targaryen' },
+          { id: 'aerys-ii-targaryen', name: 'Aerys II Targaryen' },
+          { id: 'aegon-targaryen', name: 'Aegon Targaryen' },
+          { id: 'viserys-targaryen', name: 'Viserys Targaryen' },
+          { id: 'aemon', name: 'Aemon' }
         ]
       },
       lannister: {
         name: 'Lannister',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest',
         members: [
-          'Tyrion Lannister', 'Jaime Lannister', 'Tywin Lannister', 'Lancel Lannister', 'Kevan Lannister', 'Joanna Lannister'
+          { id: 'tyrion-lannister', name: 'Tyrion Lannister' },
+          { id: 'jaime-lannister', name: 'Jaime Lannister' },
+          { id: 'tywin-lannister', name: 'Tywin Lannister' },
+          { id: 'lancel-lannister', name: 'Lancel Lannister' },
+          { id: 'kevan-lannister', name: 'Kevan Lannister' },
+          { id: 'joanna-lannister', name: 'Joanna Lannister' }
         ]
       },
       tyrell: {
         name: 'Tyrell',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/c/cf/House-Tyrell-Main-Shield.PNG/revision/latest',
         members: [
-          'Margaery Tyrell', 'Loras Tyrell', 'Olenna Tyrell', 'Mace Tyrell', 'Alerie Tyrell'
+          { id: 'margaery-tyrell', name: 'Margaery Tyrell' },
+          { id: 'loras-tyrell', name: 'Loras Tyrell' },
+          { id: 'olenna-tyrell', name: 'Olenna Tyrell' },
+          { id: 'mace-tyrell', name: 'Mace Tyrell' },
+          { id: 'alerie-tyrell', name: 'Alerie Tyrell' }
         ]
       },
       baratheon: {
         name: 'Baratheon',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/0/00/House-Baratheon-Main-Shield.PNG/revision/latest',
         members: [
-          'Robert Baratheon', 'Stannis Baratheon', 'Renly Baratheon', 'Shireen Baratheon', 'Gendry', 'Selyse Baratheon'
+          { id: 'Robert Baratheon', name: 'Robert Baratheon' },
+          { id: 'Stannis Baratheon', name: 'Stannis Baratheon' },
+          { id: 'Renly Baratheon', name: 'Renly Baratheon' },
+          { id: 'Shireen Baratheon', name: 'Shireen Baratheon' },
+          { id: 'Selyse Baratheon', name: 'Selyse Baratheon' },
+          { id: 'gendry', name: 'Gendry' }
         ]
       },
       martell: {
         name: 'Martell',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/7/7e/House-Martell-Main-Shield.PNG/revision/latest',
         members: [
-          'Oberyn Martell', 'Elia Martell', 'Doran Martell', 'Nymeria Sand', 'Obara Sand', 'Trystane Martell'
+          { id: 'Oberyn Martell', name: 'Oberyn Martell' },
+          { id: 'Elia Martell', name: 'Elia Martell' },
+          { id: 'Doran Martell', name: 'Doran Martell' },
+          { id: 'Nymeria Sand', name: 'Nymeria Sand' },
+          { id: 'Obara Sand', name: 'Obara Sand' },
+          { id: 'Trystane Martell', name: 'Trystane Martell' }
         ]
       },
       greyjoy: {
         name: 'Greyjoy',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/86/House-Greyjoy-Main-Shield.PNG/revision/latest',
         members: [
-          'Yara Greyjoy', 'Euron Greyjoy', 'Balon Greyjoy', 'Aeron Greyjoy', 'Rodrik Greyjoy', 'Maron Greyjoy', 'Alannys Greyjoy'
+          { id: 'yara-greyjoy', name: 'Yara Greyjoy' },
+          { id: 'euron-greyjoy', name: 'Euron Greyjoy' },
+          { id: 'balon-greyjoy', name: 'Balon Greyjoy' },
+          { id: 'aeron-greyjoy', name: 'Aeron Greyjoy' },
+          { id: 'rodrik-greyjoy', name: 'Rodrik Greyjoy' },
+          { id: 'maron-greyjoy', name: 'Maron Greyjoy' },
+          { id: 'alannys-greyjoy', name: 'Alannys Greyjoy' }
         ]
       },
       arryn: {
         name: 'Arryn',
         sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/1/15/House-Arryn-Main-Shield.PNG/revision/latest',
         members: [
-          'Jon Arryn', 'Lysa Arryn', 'Robin Arryn', 'Artys I Arryn', 'Aemma Arryn', 'Ronnel Arryn'
+          { id: 'jon-arryn', name: 'Jon Arryn' },
+          { id: 'lysa-arryn', name: 'Lysa Arryn' },
+          { id: 'robin-arryn', name: 'Robin Arryn' },
+          { id: 'artys-i-arryn', name: 'Artys I Arryn' },
+          { id: 'aemma-arryn', name: 'Aemma Arryn' },
+          { id: 'ronnel-arryn', name: 'Ronnel Arryn' }
         ]
       }
     },
