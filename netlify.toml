@@ -10,3 +10,8 @@
 [context.production]
   [context.production.environment]
     FROM_NETLIFY = "true"
+
+[[redirects]]
+  from = "/7-cli-sfc/solution/dist/*"
+  to = "/7-cli-sfc/solution/dist/index.html"
+  status = 200
