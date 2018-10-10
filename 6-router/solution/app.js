@@ -64,11 +64,11 @@ var houses = {
     name: 'Baratheon',
     sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/0/00/House-Baratheon-Main-Shield.PNG/revision/latest',
     members: [
-      { id: 'Robert Baratheon', name: 'Robert Baratheon' },
-      { id: 'Stannis Baratheon', name: 'Stannis Baratheon' },
-      { id: 'Renly Baratheon', name: 'Renly Baratheon' },
-      { id: 'Shireen Baratheon', name: 'Shireen Baratheon' },
-      { id: 'Selyse Baratheon', name: 'Selyse Baratheon' },
+      { id: 'robert-baratheon', name: 'Robert Baratheon' },
+      { id: 'stannis-baratheon', name: 'Stannis Baratheon' },
+      { id: 'renly-baratheon', name: 'Renly Baratheon' },
+      { id: 'shireen-baratheon', name: 'Shireen Baratheon' },
+      { id: 'selyse-baratheon', name: 'Selyse Baratheon' },
       { id: 'gendry', name: 'Gendry' }
     ]
   },
@@ -76,12 +76,12 @@ var houses = {
     name: 'Martell',
     sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/7/7e/House-Martell-Main-Shield.PNG/revision/latest',
     members: [
-      { id: 'Oberyn Martell', name: 'Oberyn Martell' },
-      { id: 'Elia Martell', name: 'Elia Martell' },
-      { id: 'Doran Martell', name: 'Doran Martell' },
-      { id: 'Nymeria Sand', name: 'Nymeria Sand' },
-      { id: 'Obara Sand', name: 'Obara Sand' },
-      { id: 'Trystane Martell', name: 'Trystane Martell' }
+      { id: 'oberyn-martell', name: 'Oberyn Martell' },
+      { id: 'elia-martell', name: 'Elia Martell' },
+      { id: 'doran-martell', name: 'Doran Martell' },
+      { id: 'nymeria-sand', name: 'Nymeria Sand' },
+      { id: 'obara-sand', name: 'Obara Sand' },
+      { id: 'trystane-martell', name: 'Trystane Martell' }
     ]
   },
   greyjoy: {

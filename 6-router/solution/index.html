@@ -31,9 +31,9 @@
 <div class="map" @click="currentHouse = null">
   <house
       v-for="(house, houseId) in houses"
+      :key="houseId"
       :house="house"
       :house-id="houseId"
-      :key="houseId"
       :current-house="currentHouse"
       @house-change="toggleCurrent"
   ></house>

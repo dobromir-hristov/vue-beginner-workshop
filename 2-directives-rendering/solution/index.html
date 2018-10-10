@@ -14,9 +14,10 @@
 <div id="app">
   <div class="map">
     <div
-        class="house"
-        :class="house.name.toLowerCase()"
         v-for="(house, houseId) in houses"
+        :key="houseId"
+        :class="house.name.toLowerCase()"
+        class="house"
     >
       <img :src="house.sigil">
     </div>
