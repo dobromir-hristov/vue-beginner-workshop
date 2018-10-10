@@ -6,3 +6,7 @@
   publish = "/"
   # This will be your default build command
   command = "npm run build"
+
+[context.production]
+  [context.production.environment]
+    FROM_NETLIFY = "true"
