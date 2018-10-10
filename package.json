@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "stylus assets/styles/style.styl",
-    "styles:watch": "npm run styles -- -w",
-    "build": "npm run stylus && cd 7-cli-sfc/solition && npm run build && cp _redirects /dist"
+    "styles:watch": "npm run styles -- -w"
   },
   "author": "Dobromir Hristov <dobri@digital-cult.com> (http://digital-cult.com/)",
   "license": "MIT",
