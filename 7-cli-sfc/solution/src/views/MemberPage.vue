@@ -3,7 +3,7 @@
     <div>
       {{ currentMember.name }}
     </div>
-    <router-link to="/">Back To Map</router-link>
+    <router-link class="back-button" to="/">Back To Map</router-link>
   </div>
 </template>
 
@@ -30,3 +30,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.back-button {
+  font-size: 1rem;
+}
+</style>
