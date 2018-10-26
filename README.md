@@ -23,7 +23,7 @@ Students who follow the course closely will not need to reach for the materials 
 * Favourite Code Editor - Webstorm, Sublime, VSCode, Atom
 
 ### Final App
-[Live Demo](https://angry-banach-940a4c.netlify.com/)
+[Live Demo](https://workshop.vuebulgaria.com/)
 
 ### Chapters
 1. [Introduction to Vue](./1-introduction)
