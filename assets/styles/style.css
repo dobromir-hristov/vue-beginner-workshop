@@ -157,6 +157,9 @@ a:hover {
 .members .member:hover {
   background: #eee;
 }
+.members .member a {
+  display: block;
+}
 .member-page {
   width: 100%;
   height: 100vh;
