@@ -60,6 +60,10 @@ a:hover {
   padding: 0;
   text-align: center;
 }
+.repository-link {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .house {
   position: absolute;
   transform-origin: bottom center;
