@@ -21,6 +21,7 @@
   [headers.values]
     Access-Control-Allow-Origin = "*"
 
+[[headers]]
   for = "/**/*.ttf"
   [headers.values]
     Access-Control-Allow-Origin = "*"
