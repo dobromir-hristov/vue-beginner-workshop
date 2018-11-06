@@ -4,17 +4,25 @@
 
 In this third chapter we will learn how to handle browser DOM events with Vue. 
 
-Handling events like click, form submit or drag events is an indispensable part of every modern application.
- Vue.js makes handling events a piece of cake.
+Handling events like **click**, form **submit** or **drag** events is an indispensable part of every modern application. Vue.js makes handling events a piece of cake.
 
 ### Challenges
 
-1. Add a `click` event listener on each `house`. The event should store the current house’s slug to data property on the Vue instance called `currentHouse`  - Test if it works in Vue DevTools.
-2. Create a `div` with a class of `members` that is a sibling to the sigil image - Test if visible in the browser.
-3. Toggle the visibility of the `members` div 
-    - Use an expression inside a v-if or a v-for checking if the current house is equal to `currentHouse`.
-4. Loop all the house members inside the `members` div, by creating a div with a class of `member`.
-5. Using `{{moustache}}` syntax, display the each `member`’s name.
-6. Add a `click` handler to the `map` to close the dropdown. You need to reset the currently selected one.
-7. Add a `.stop` modifier to the `members` click handler to **stop** the event from bubbling up.
-    - Not doing so will cause the map click handle to close the dropdown as the click handler will bubble up.
+1. Add a **currentHouse** data property on the Vue instance.
+2. Add a `@click` event listener on the `.house` element.
+    - The event should store the currently looped **houseId** to the `currentHouse` property on the Vue instance.
+    - Test if it works in Vue DevTools.
+3. Create a div with a class of `.members` that is a sibling to the house's sigil image 
+    - Test in Browser - should see empty data placeholders
+4. Toggle the visibility of the `members` div 
+    - Use a `v-if` or a `v-for` directive
+    - Add an expression checking if `houseId === currentHouse` data property.
+    - Test in Browser by clicking on house sigils.
+5. ​Create a `.member` div as a child of `.members`.
+    - Loop all the **members** of each **house** by attaching a `v-for` directive to the `.member` div
+    - Don't forget to add a `:key` attribute that is bound to a `member.id`
+    - Using `{{moustache}}` syntax, display the `member.name` property.
+    - Test in Browser
+7. Add a `click` event listener to the `.map` to close the dropdown. You can do that by resetting the currently selected one to `null`.
+8. Add a `.stop` modifier to the `.members` click handler to **stop** the event from bubbling up.
+    - Not doing so will cause the map click handler to close the dropdown, as the click handler will bubble up.

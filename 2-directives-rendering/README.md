@@ -16,6 +16,7 @@ Directives are a simple, yet key part of Vue.js development and will be used hea
     - Transform to `toLowerCase` the house's name inside the `class` binding directive.
     - Check in Browser - Red dot should appear where the house should be.
 5. Add an `img` tag inside the `.house` div and bind it's `src` attribute to the house’s **sigil**.
+    - add a class of **sigil** to the image.
     - Check in browser - should see the House sigil on the map.
 6. Loop over the **houses** data property by attaching a `v-for` directive on the `.house` div.
      - Set a dynamic **key** attribute on the `.house` div, equal to the current looped house index. Look into using `v-for="(house, houseId) in houses"` syntax.
