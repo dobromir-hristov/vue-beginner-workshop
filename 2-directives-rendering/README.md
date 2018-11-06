@@ -2,17 +2,24 @@
 
 ### Target
 
-In this second chapter we will learn what directives are and how to render data with Vue. 
+In this second chapter we will learn what directives are, and how to render and manipulate dom elements with Vue. 
 
-Directives are a simple, yet key part of Vue.js development and will be used heavily during the course.
+Directives are a simple, yet key part of Vue.js development and will be used heavily through out the course.
 
 ### Challenges
 
-1. Add a div with a class of **map** as a child of **#app**.
-2. Create a div with a class of **house**.
-3. Pick your favourite _Great House of Westeros_ and dynamically bind a `class` property with the name of the house you chose.
-    - The dynamic class needs to be transformed `toLowerCase` inside the class v-bind directive.
-4. Add an `img` tag inside the `house` div and bind the house’s **sigil** to the `img` tag.
-5. Using the already created `house` div, loop over the _Great Houses of Westeros_ by using `v-for` 
-on the `houses` data property.
-6. Use the currently looped `house` instead of the previously hard coded one to bind to the `img` src and the `house` class.
+1. Use the [base/index.html](./base/index.html) as your starting point.
+2. Add a div with a class of **map** as a child of `#app`.
+3. Create a div with a class of **house** inside `.map`
+4. Find the **house** you were assigned to, from the `houses` variable inside the script tag.
+    - Add a dynamic class on the `.house` div, binding it to the `name` of your house.
+    - Transform to `toLowerCase` the house's name inside the `class` binding directive.
+    - Check in Browser - Red dot should appear where the house should be.
+5. Add an `img` tag inside the `.house` div and bind it's `src` attribute to the house’s **sigil**.
+    - Check in browser - should see the House sigil on the map.
+6. Loop over the **houses** data property by attaching a `v-for` directive on the `.house` div.
+     - Set a dynamic **key** attribute on the `.house` div, equal to the current looped house index. Look into using `v-for="(house, houseId) in houses"` syntax.
+6. Using  the currently looped `house` 
+    - Bind the `img` src to the current house's **sigil**.
+    - Bind the `house` class to the current `houseId`.
+    - Check in the Browser to see if you see all the houses and their sigils.
