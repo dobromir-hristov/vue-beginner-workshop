@@ -9,7 +9,10 @@ making templates clean and readable, while all the logic is kept in one easy to 
 
 ### Challenges
 
-1. Transform the `@click` expression to a method.
-2. Change the click handler toggle the `dropdown` on/off.
-3. Transform the visibility check on the `members` div to a `isVisible` method.
-
+1. Define a `toggleHouse` method on the Vue instance
+    - Make the method toggle the `currentHouse`.
+    - Transform the `@click` expression on the `.house` to use the method.
+    - Make sure it toggles the dropdown visibility on and off.
+    - Use the same method to hide the dropdown when clicking the `.map`.
+3. Transform the visibility check on the `.members` div to a `isVisible` method
+    - It should accept the **houseId** as a parameter and compare it with the **currentHouse** property.
