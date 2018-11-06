@@ -27,7 +27,7 @@
 <script type="text/x-template" id="house-template">
 <div
     class="house"
-    :class="{ [houseId]:true, 'is-active': isVisible }"
+    :class="[houseId, { 'is-active': isVisible }]"
     @click.stop="$emit('house-change', houseId)"
 >
   <img :src="house.sigil">
@@ -35,6 +35,42 @@
 </div>
 </script>
 <script>
+var Member = {
+  props: ['member'],
+  template: '<div class="member">{{ member.name }}</div>'
+}
+
+var Members = {
+  components: {
+    Member: Member
+  },
+  props: ['members'],
+  template: `<div class="members">
+                <member
+                    v-for="member in members"
+                    :key="member.id"
+                    :member="member"
+                />
+             </div>`
+}
+
+var House = {
+  template: '#house-template',
+  components: {
+    Members: Members
+  },
+  props: {
+    house: Object,
+    currentHouse: String,
+    houseId: String
+  },
+  computed: {
+    isVisible () {
+      return this.currentHouse === this.houseId
+    }
+  }
+}
+
 var houses = {
   stark: {
     name: 'Stark',
@@ -148,38 +184,11 @@ var houses = {
   }
 }
 
-Vue.component('house', {
-  template: '#house-template',
-  props: {
-    house: Object,
-    currentHouse: String,
-    houseId: String
-  },
-  computed: {
-    isVisible () {
-      return this.currentHouse === this.houseId
-    }
-  }
-})
-
-Vue.component('members', {
-  props: ['members'],
-  template: `<div class="members">
-                <member
-                    v-for="member in members"
-                    :key="member.id"
-                    :member="member"
-                />
-             </div>`
-})
-
-Vue.component('member', {
-  props: ['member'],
-  template: '<div class="member">{{ member.name }}</div>'
-})
-
 var app = new Vue({
   el: '#app',
+  components: {
+    House: House
+  },
   data: {
     houses: houses,
     currentHouse: null
