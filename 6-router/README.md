@@ -15,7 +15,7 @@ the included `router-view` component.
     - Move main template into an `x-template` and assign it to **WesterosMapPage**. 
 3. Create a router config and assign it to the **new VueRouter** instance.
     - You can use the base route config from [6-router/base/app.js](./base/app.js)
-    - The `WesterosMapPage` needs to be assigned to `/` route path. Give it a name of `home`.
+    - The **WesterosMapPage** needs to be assigned to `/` route path. Give it a name of `home`.
 4. Change the main Vue instance’s template to a single `<router-view></router-view>` tag inside the `#app` div.
 5. Assign the router instance to the main Vue instance.
 6. Pass the `houseId` from the **House** component down through the `Members` and to the `Member` component.
@@ -32,5 +32,5 @@ the included `router-view` component.
 9. Create a **currentMember** computed property on **MemberPage** that filters out the members in the `houses` property to find the current member on the page.
     - get the current house via `this.houses[this.chouseId]` then loop though it's `members` and find the member where `member.id === memberId`
     - be careful of the `this` context inside callbacks.
-    - Display the currentMember's name on the MemberPage template
-11. Add a back button to the Westeros Map by using a router-link.
+    - Display the `currentMember`'s name on the **MemberPage** template
+11. Add a back button to the **WesterosMapPage** by using a `router-link`.
