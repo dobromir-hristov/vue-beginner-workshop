@@ -36,8 +36,30 @@
 </div>
 </script>
 <script>
-Vue.component('house', {
+var Member = {
+  props: ['member'],
+  template: '<div class="member">{{ member.name }}</div>'
+}
+
+var Members = {
+  components: {
+    Member: Member
+  },
+  props: ['members'],
+  template: `<div class="members">
+                <member
+                    v-for="member in members"
+                    :key="member.id"
+                    :member="member"
+                />
+             </div>`
+}
+
+var House = {
   template: '#house-template',
+  components: {
+    Members: Members
+  },
   props: {
     house: Object,
     currentHouse: String,
@@ -48,23 +70,7 @@ Vue.component('house', {
       return this.currentHouse === this.houseId
     }
   }
-})
-
-Vue.component('members', {
-  props: ['members'],
-  template: `<div class="members">
-                <member
-                    v-for="member in members"
-                    :key="member.id"
-                    :member="member"
-                />
-             </div>`
-})
-
-Vue.component('member', {
-  props: ['member'],
-  template: '<div class="member">{{ member.name }}</div>'
-})
+}
 
 var houses = {
   stark: {
@@ -181,6 +187,9 @@ var houses = {
 
 var app = new Vue({
   el: '#app',
+  components: {
+    House: House
+  },
   data: {
     houses: houses,
     currentHouse: null
