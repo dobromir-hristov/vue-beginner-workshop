@@ -12,4 +12,6 @@ After that we will learn about moustache syntax and displaying a piece of data f
 
 #### What you will do
 1. Define a dynamic data property inside the new Vue instance's data object.
-2. Display the newly defined data property in the template using moustache syntax `{{ property }}`
+2. Display the newly defined data property in the template using moustache syntax `{{ dataProperty }}`
+3. Test in the Browser
+4. Open your Browser console and run `app.dataProperty = 'Hello from VueBulgaria at Dopamine'` where `dataProperty` is your defined property. That string should auto appear in the browser.
