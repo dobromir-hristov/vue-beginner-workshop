@@ -8,9 +8,8 @@ After that we will learn about moustache syntax and displaying a piece of data f
 
 ### Challenges
 
-1. Use the [base/index.html](./base/index.html) as your starting point. 
-2. Create an empty `#app` div inside the body.
-3. Create a new Vue instance and mount it to the `#app` div.
-    - The `el` property needs equal `#app`
-4. Using moustache syntax, display a data property from the Vue instance
-    - You need to define the property inside the `data` object
+1. Use the [1-introduction/base/index.html](./base/index.html) as your starting point. 
+
+#### What you will do
+1. Define a dynamic data property inside the new Vue instance's data object.
+2. Display the newly defined data property in the template using moustache syntax `{{ property }}`
