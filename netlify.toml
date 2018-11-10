@@ -12,6 +12,11 @@
     FROM_NETLIFY = "true"
 
 [[redirects]]
+  from = "/final/js/*"
+  to = "/7-cli-sfc/solution/dist/js/:splat"
+  status = 200
+
+ [[redirects]]
   from = "/final/*"
   to = "/7-cli-sfc/solution/dist/index.html"
   status = 200
