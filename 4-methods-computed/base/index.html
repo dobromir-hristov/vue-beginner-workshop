@@ -34,6 +34,14 @@
   </div>
 </div>
 <script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    houses: houses,
+    currentHouse: null
+  }
+})
+
 var houses = {
   stark: {
     name: 'Stark',
@@ -146,14 +154,6 @@ var houses = {
     ]
   }
 }
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    houses: houses,
-    currentHouse: null
-  }
-})
 </script>
 </body>
 </html>

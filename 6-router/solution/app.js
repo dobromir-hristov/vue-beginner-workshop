@@ -74,6 +74,24 @@ var MemberPage = {
   }
 }
 
+// 2. Define some routes
+const routes = [
+  { path: '/', component: WesterosMapPage },
+  { path: '/:houseId/:memberId', name: 'member', component: MemberPage, props: true }
+]
+
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
+
+var app = new Vue({
+  el: '#app',
+  router
+})
+
 var houses = {
   stark: {
     name: 'Stark',
@@ -186,21 +204,3 @@ var houses = {
     ]
   }
 }
-
-// 2. Define some routes
-const routes = [
-  { path: '/', component: WesterosMapPage },
-  { path: '/:houseId/:memberId', name: 'member', component: MemberPage, props: true }
-]
-
-// 3. Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
-const router = new VueRouter({
-  routes // short for `routes: routes`
-})
-
-var app = new Vue({
-  el: '#app',
-  router
-})

@@ -72,6 +72,22 @@ var House = {
   }
 }
 
+var app = new Vue({
+  el: '#app',
+  components: {
+    House: House
+  },
+  data: {
+    houses: houses,
+    currentHouse: null
+  },
+  methods: {
+    toggleCurrent (house) {
+      this.currentHouse = this.currentHouse === house ? null : house
+    }
+  }
+})
+
 var houses = {
   stark: {
     name: 'Stark',
@@ -184,22 +200,6 @@ var houses = {
     ]
   }
 }
-
-var app = new Vue({
-  el: '#app',
-  components: {
-    House: House
-  },
-  data: {
-    houses: houses,
-    currentHouse: null
-  },
-  methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
-    }
-  }
-})
 </script>
 <script src="app.js"></script>
 </body>
