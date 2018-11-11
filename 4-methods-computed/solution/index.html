@@ -12,13 +12,13 @@
 
 <body>
 <div id="app">
-  <div class="map" @click="toggleCurrent(null)">
+  <div class="map" @click="showHouse(null)">
     <div
         v-for="(house, houseId) in houses"
         :key="houseId"
         :class="houseId"
         class="house"
-        @click.stop="toggleCurrent(houseId)"
+        @click.stop="showHouse(houseId)"
     >
       <img :src="house.sigil">
       <div class="members" v-if="isVisible(houseId)">

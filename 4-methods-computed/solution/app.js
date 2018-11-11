@@ -5,11 +5,11 @@ var app = new Vue({
     currentHouse: null
   },
   methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
+    showHouse (houseId) {
+      this.currentHouse = this.currentHouse === houseId ? null : houseId
     },
-    isVisible (house) {
-      return this.currentHouse === house
+    isVisible (houseId) {
+      return this.currentHouse === houseId
     }
   }
 })

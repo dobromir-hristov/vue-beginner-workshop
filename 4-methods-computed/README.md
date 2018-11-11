@@ -17,6 +17,7 @@ Methods in Vue.js allow for the creation of a cleaner and dryer code. Logic gets
     - Set `showHouse` as a the `.house` element's click expression. Pass the **houseId**.
     - Check in the Browser. Make sure it shows the dropdown.
     - Use the `showHouse` method to hide the dropdown when clicking the `.map`.
+
 #### What you will do:
 1. Move the visibility check in the `v-if` on `.members` to a method
     - Define an `isVisible` method on the Vue instance.
