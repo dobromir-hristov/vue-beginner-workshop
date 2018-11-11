@@ -12,13 +12,13 @@
 
 <body>
 <div id="app">
-  <div class="map" @click="currentHouse = null">
+  <div class="map" @click="showHouse(null)">
     <div
         v-for="(house, houseId) in houses"
         :key="houseId"
         :class="houseId"
         class="house"
-        @click.stop="toggleCurrent(houseId)"
+        @click.stop="showHouse(houseId)"
     >
       <img :src="house.sigil">
       <div class="members" v-if="isVisible(houseId)">
@@ -40,22 +40,6 @@
 </script>
 <!-- Component Templates End Here -->
 <script src="https://workshop.vuebulgaria.com/assets/scripts/houses.js"></script>
-<script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    houses: houses,
-    currentHouse: null
-  },
-  methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
-    },
-    isVisible (house) {
-      return this.currentHouse === house
-    }
-  }
-})
-</script>
+<script src="./app.js"></script>
 </body>
 </html>
