@@ -12,7 +12,7 @@
 
 <body>
 <div id="app">
-  <div class="map" @click="currentHouse = null">
+  <div class="map" @click="toggleCurrent(null)">
     <div
         v-for="(house, houseId) in houses"
         :key="houseId"
@@ -35,23 +35,6 @@
 </div>
 
 <script src="https://workshop.vuebulgaria.com/assets/scripts/houses.js"></script>
-<script>
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    houses: houses,
-    currentHouse: null
-  },
-  methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
-    },
-    isVisible (house) {
-      return this.currentHouse === house
-    }
-  }
-})
-</script>
+<script src="./app.js"></script>
 </body>
 </html>
