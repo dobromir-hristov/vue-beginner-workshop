@@ -23,11 +23,11 @@ Handling events like **click**, form **submit** or **drag** events is an indispe
 1. Add `currentHouse: null` in the data property of the Vue instance.
 2. Toggle the visibility of the `.members` div.
     - Add a `v-if` or a `v-show` directive, setting its body to `houseId === currentHouse`.
-3. Show the `.members` dropdown.
+3. Show the `.members` dropdown when clicking on a house.
     - Add a `@click` event listener on the `.house` element.
     - Set its expression to `currentHouse = houseId`.
     - Test in Browser by clicking on а house.
-4. Close the `.members` dropdown. 
+4. Close the `.members` dropdown when clicking away 
     - Add a `@click` event listener to the `.map` element.
     - Set its expression to `currentHouse = null`.
     - Test in the Browser by clicking on a house. The dropdown should be bugged and not open.
