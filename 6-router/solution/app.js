@@ -1,32 +1,20 @@
-var Member = {
-  props: ['member', 'houseId'],
-  template: '<div class="member"><router-link :to="{ name: \'member\', params: { houseId: houseId, memberId: member.id } }">{{ member.name }}</router-link></div>'
-}
-
 var Members = {
-  components: {
-    Member: Member
-  },
-  props: ['members', 'houseId'],
-  template: `<div class="members">
-                <member
-                    v-for="member in members"
-                    :key="member.id"
-                    :member="member"
-                    :house-id="houseId"
-                />
-             </div>`
+  template: `#members-template`,
+  props: {
+    members: Array,
+    houseId: String
+  }
 }
 
 var House = {
-  components: {
-    Members: Members
-  },
   template: '#house-template',
   props: {
     house: Object,
     currentHouse: String,
     houseId: String
+  },
+  components: {
+    Members: Members
   },
   computed: {
     isVisible () {
@@ -47,8 +35,8 @@ var WesterosMapPage = {
     }
   },
   methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
+    showHouse (houseId) {
+      this.currentHouse = houseId
     }
   }
 }

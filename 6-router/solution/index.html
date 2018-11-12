@@ -15,15 +15,32 @@
 <div id="app">
   <router-view></router-view>
 </div>
+<script type="text/x-template" id="members-template">
+<div class="members">
+  <div
+      v-for="member in members"
+      :key="member.id"
+      class="member"
+  >
+    <router-link :to="{ name: 'member', params: { houseId: houseId, memberId: member.id } }">
+      {{ member.name }}
+    </router-link>
+  </div>
+</div>
+</script>
 
 <script type="text/x-template" id="house-template">
 <div
+    :class="[houseId, { 'is-active': isVisible }]"
     class="house"
-    :class="{ [houseId]:true, 'is-active': isVisible }"
-    @click.stop="$emit('house-change', houseId)"
+    @click.stop="$emit('change-house', houseId)"
 >
   <img :src="house.sigil">
-  <members :members="house.members" :houseId="currentHouse" v-if="isVisible"></members>
+  <members
+      v-if="isVisible"
+      :members="house.members"
+      :houseId="currentHouse"
+  ></members>
 </div>
 </script>
 
@@ -35,7 +52,7 @@
       :house="house"
       :house-id="houseId"
       :current-house="currentHouse"
-      @house-change="toggleCurrent"
+      @change-house="showHouse"
   ></house>
 </div>
 </script>
