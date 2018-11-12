@@ -1,25 +1,19 @@
-var Member = {
-  props: ['member'],
-  template: '<div class="member">{{ member.name }}</div>'
-}
-
 var Members = {
-  components: {
-    Member: Member
-  },
-  props: ['members'],
-  template: `#members-template`
+  template: '#members-template',
+  props: {
+    members: Array
+  }
 }
 
 var House = {
   template: '#house-template',
-  components: {
-    Members: Members
-  },
   props: {
     house: Object,
-    currentHouse: String,
-    houseId: String
+    houseId: String,
+    currentHouse: String
+  },
+  components: {
+    Members: Members
   },
   computed: {
     isVisible () {

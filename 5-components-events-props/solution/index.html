@@ -19,34 +19,38 @@
         :house="house"
         :house-id="houseId"
         :current-house="currentHouse"
-        @house-change="showHouse"
+        @change-house="showHouse"
     ></house>
   </div>
 </div>
 
-<!-- House Template -->
-<script type="text/x-template" id="house-template">
-<div
-    class="house"
-    :class="[houseId, { 'is-active': isVisible }]"
-    @click.stop="$emit('house-change', houseId)"
->
-  <img :src="house.sigil">
-  <members :members="house.members" v-if="isVisible"></members>
-</div>
-</script>
-
-<!-- Members Template -->
+<!-- Component Templates Start Here -->
 <script type="text/x-template" id="members-template">
 <div class="members">
-  <member
+  <div
       v-for="member in members"
       :key="member.id"
-      :member="member"
-  />
+      class="member"
+  >
+    {{ member.name }}
+  </div>
 </div>
 </script>
 
+<script type="text/x-template" id="house-template">
+<div
+    :class="[houseId, { 'is-active': isVisible }]"
+    class="house"
+    @click.stop="$emit('change-house', houseId)"
+>
+  <img :src="house.sigil">
+  <members
+      v-if="isVisible"
+      :members="house.members"
+  ></members>
+</div>
+</script>
+<!-- Component Templates End Here -->
 <script src="https://workshop.vuebulgaria.com/assets/scripts/houses.js"></script>
 <script src="./app.js"></script>
 </body>
