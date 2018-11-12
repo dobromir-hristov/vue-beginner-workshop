@@ -13,83 +13,46 @@
 
 <body>
 <div id="app">
-  <div class="map" @click="currentHouse = null">
+  <div class="map" @click="showHouse(null)">
     <house
         v-for="(house, houseId) in houses"
         :key="houseId"
         :house="house"
         :house-id="houseId"
         :current-house="currentHouse"
-        @house-change="toggleCurrent"
+        @change-house="showHouse"
     ></house>
   </div>
 </div>
 
-<script type="text/x-template" id="house-template">
-<div
-    class="house"
-    :class="{ [houseId]:true, 'is-active': isVisible }"
-    @click.stop="$emit('house-change', houseId)"
->
-  <img :src="house.sigil">
-  <members :members="house.members" v-if="isVisible"></members>
+<!-- Component Templates Start Here -->
+<script type="text/x-template" id="members-template">
+<div class="members">
+  <div
+      v-for="member in members"
+      :key="member.id"
+      class="member"
+  >
+    {{ member.name }}
+  </div>
 </div>
 </script>
 
-<script src="https://workshop.vuebulgaria.com/assets/scripts/houses.js"></script>
-<script>
-var Member = {
-  props: ['member'],
-  template: '<div class="member">{{ member.name }}</div>'
-}
-
-var Members = {
-  components: {
-    Member: Member
-  },
-  props: ['members'],
-  template: `<div class="members">
-                <member
-                    v-for="member in members"
-                    :key="member.id"
-                    :member="member"
-                />
-             </div>`
-}
-
-var House = {
-  template: '#house-template',
-  components: {
-    Members: Members
-  },
-  props: {
-    house: Object,
-    currentHouse: String,
-    houseId: String
-  },
-  computed: {
-    isVisible () {
-      return this.currentHouse === this.houseId
-    }
-  }
-}
-
-var app = new Vue({
-  el: '#app',
-  components: {
-    House: House
-  },
-  data: {
-    houses: houses,
-    currentHouse: null
-  },
-  methods: {
-    toggleCurrent (house) {
-      this.currentHouse = this.currentHouse === house ? null : house
-    }
-  }
-})
+<script type="text/x-template" id="house-template">
+<div
+    :class="[houseId, { 'is-active': isVisible }]"
+    class="house"
+    @click.stop="$emit('change-house', houseId)"
+>
+  <img :src="house.sigil">
+  <members
+      v-if="isVisible"
+      :members="house.members"
+  ></members>
+</div>
 </script>
-<script src="app.js"></script>
+<!-- Component Templates End Here -->
+<script src="https://workshop.vuebulgaria.com/assets/scripts/houses.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
