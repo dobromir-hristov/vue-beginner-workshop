@@ -43,3 +43,6 @@ Components can communicate with each other by passing props down to child compon
     - Change `house.members` to `members` in the v-for directive inside the template. This way it uses the prop, rather the members in the house, which are no longer available.
 2. The main vue instance should just have the `#app`,`.map` and a loop of `<house/>` components.
 
+#### Bonus:
+1. Extract the **Member** component away from `.member` element.
+
