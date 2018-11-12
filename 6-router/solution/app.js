@@ -64,7 +64,7 @@ var MemberPage = {
 
 // 2. Define some routes
 const routes = [
-  { path: '/', component: WesterosMapPage },
+  { path: '/', component: WesterosMapPage, name: 'home' },
   { path: '/:houseId/:memberId', name: 'member', component: MemberPage, props: true }
 ]
 
