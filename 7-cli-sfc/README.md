@@ -40,7 +40,6 @@ Using vue cli, bootstrap a fresh project that we will transfer our components in
 2. Delete everything from `components` and `views` folders.
 3. Move **House**, **Members** and **Member** components, each to a separate `SFC` file inside components folder.
     - Use the `@` alias to import elements from `src` folder. This makes later refactoring easier i.e. `import Member from '@/components/Member'`
-    - `Member.vue` should have its template as a `template` tag inside the SFC. Rest stays the same.
     - `Members.vue` should have its template as a `template` tag inside the SFC. Rest stays the same.
     - `House.vue` should have its template as a `template` tag inside the SFC. Rest stays the same.
 4. Move the `houses` data to a file inside `src/data/houses.js`. Use `export default {}` syntax to convert it to an ES module.
