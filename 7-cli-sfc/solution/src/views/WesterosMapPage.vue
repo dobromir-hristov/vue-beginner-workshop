@@ -6,7 +6,7 @@
         :house="house"
         :house-id="houseId"
         :current-house="currentHouse"
-        @house-change="toggleCurrent"
+        @change-house="toggleCurrent"
     ></house>
   </div>
 </template>

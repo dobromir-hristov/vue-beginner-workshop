@@ -42,12 +42,14 @@ Using vue cli, bootstrap a fresh project that we will transfer our components in
     - Use the `@` alias to import elements from `src` folder. This makes later refactoring easier i.e. `import Member from '@/components/Member'`
     - `Members.vue` should have its template as a `template` tag inside the SFC. Rest stays the same.
     - `House.vue` should have its template as a `template` tag inside the SFC. Rest stays the same.
-4. Move the `houses` data to a file inside `src/data/houses.js`. Use `export default {}` syntax to convert it to an ES module.
 5. Move **WesterosMapPage** and **MemberPage** to the `views` folder as separate `.vue` SFC files.
     - both **WesterosMapPage** and **MemberPage.vue** should import the `houses` data and assign it to a local `houses` data property in the vue instance.
 6. Move the router definition to the `router.js` file.
     - Import `WesterosMapPage.vue` and assign it to the **WesterosMapPage** page definition as its `component`.
     - Import `MemberPage.vue` and assign it to the **MemberPage** page definition as its `component`.
+
+#### Bonus
+4. Move the `houses` data to a file inside `src/data/houses.js`. Use `export default {}` syntax to convert it to an ES module.
 
 ### Running the solution to see how it works
 

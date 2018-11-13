@@ -1,8 +1,8 @@
 <template>
   <div
       class="house"
-      :class="{ [houseId]:true, 'is-active': isVisible }"
-      @click.stop="$emit('house-change', houseId)"
+      :class="[houseId, { 'is-active': isVisible }]"
+      @click.stop="$emit('change-house', houseId)"
   >
     <img :src="house.sigil">
     <members

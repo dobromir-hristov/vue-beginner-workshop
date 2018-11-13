@@ -24,4 +24,6 @@ Methods in Vue.js allow for the creation of a cleaner and dryer code. Logic gets
     - It should accept the `houseId` as a parameter 
     - Return the result from comparing `houseId` param to the `currentHouse` data property.
     - Test in Browser.
-2. BONUS: Make the `showHouse` method toggle the dropdown off if its already visible.
+
+#### BONUS: 
+1. Make the `showHouse` method toggle the dropdown off if its already visible.
