@@ -23,22 +23,27 @@ the included `router-view` component.
 5. Test in the Browser
 6. Define `houseId` as a prop on **Members**
 7. Pass the `houseId` as a prop from the **House** component down to the `Members`component.
-8. Create a component called **MemberPage** that will represent each **Member**'s page.
+
+#### What you will do:
+1. Create a component called **MemberPage** that will represent each **Member**'s page.
+    - Add a div with a class of `member-page` to its template.
+        - Add `{{$route.fullPath}}` inside `.member-page`
     - **Props:**
       - **houseId** - String
       - **memberId** - String
-    - Add the `houses` global variable to a `houses` data property
-    - Add `{{$route.fullPath}}` inside the template
-    - Add the **MemberPage** to the router config as a page with dynamic route parameters - `/:houseId/:memberId`. 
-    - Give it a name of **member**.
-    - Add `props: true` to its route config.
+    - Add the **MemberPage** to the router config
+      - Add a path of `/:houseId/:memberId`.
+      - Give it a name of **member**.
+      - Add `props: true` to its route config.
+    - Test in Browser. Go to `/stark/jon-snow` and see if it shows te **url** in the template.
+2. Change the **.member** element's template to use a `router-link` component and create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props.
+3. Test in the browser! Clicking a name in the dropdown should show the **MemberPage**
+4. Add a back button to the **WesterosMapPage** by using a `router-link`.
     
-#### What you will do:
-1. Change the **.member** element's template to use a `router-link` component and create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props.
-2. Test in the browser! Clicking a name in the dropdown should show the **MemberPage**
-3. Create a **currentMember** computed property on **MemberPage** that filters out the members in the `houses` property to find the current member on the page.
+#### Bonus:
+1. Create a **currentMember** computed property on **MemberPage** that filters out the members in the `houses` property to find the current member on the page.
+    - Add the `houses` global variable to a `houses` data property on the **MemberPage** instance.
     - get the current house via `this.houses[this.chouseId]` 
     - loop though it's `members` and return the member where `member.id === memberId`
     - be careful of the `this` context inside callbacks.
     - Display the `currentMember`'s name on the **MemberPage** template
-4. Add a back button to the **WesterosMapPage** by using a `router-link`.
