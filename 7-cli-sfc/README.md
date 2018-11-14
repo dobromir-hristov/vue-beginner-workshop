@@ -49,7 +49,8 @@ Using vue cli, bootstrap a fresh project that we will transfer our components in
     - Import `MemberPage.vue` and assign it to the **MemberPage** page definition as its `component`.
 
 #### Bonus
-4. Move the `houses` data to a file inside `src/data/houses.js`. Use `export default {}` syntax to convert it to an ES module.
+1. Move the `houses` data to a file inside `src/data/houses.js`. Use `export default {}` syntax to convert it to an ES module.
+    - Import it in both **WesterosMapPage** and **MemberPage**
 
 ### Running the solution to see how it works
 
