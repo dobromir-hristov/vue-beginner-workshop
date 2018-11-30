@@ -14,7 +14,7 @@ Handling events like **click**, form **submit** or **drag** events is an indispe
     - Test in Browser - should see empty data placeholders
 2. Visualise each member inside the members dropdown
     - Add a `.member` div as a child of `.members`.
-    - Loop all the **members** of each **house** by attaching a `v-for` directive to the `.member` div
+    - Loop the **house.members** by using a `v-for` directive on the `.member` div
     - Don't forget to add a `:key` attribute that is bound to a `member.id`
     - Using `{{moustache}}` syntax, display the `member.name` property.
     - Test in Browser
@@ -23,6 +23,7 @@ Handling events like **click**, form **submit** or **drag** events is an indispe
 1. Add `currentHouse: null` in the data property of the Vue instance.
 2. Toggle the visibility of the `.members` div.
     - Add a `v-if` or a `v-show` directive, setting its body to `houseId === currentHouse`.
+    - Test in Browser. All dropdowns should be hidden.
 3. Show the `.members` dropdown when clicking on a house.
     - Add a `@click` event listener on the `.house` element.
     - Set its expression to `currentHouse = houseId`.
