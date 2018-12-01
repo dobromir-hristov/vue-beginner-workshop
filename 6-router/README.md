@@ -26,6 +26,7 @@ the included `router-view` component.
 
 #### What you will do:
 1. Create a component called **MemberPage** that will represent each **Member**'s page.
+    - Create an `text/x-template` script with id `#member-page`.
     - Add a div with a class of `member-page` to its template.
         - Add `{{$route.fullPath}}` inside `.member-page`
     - **Props:**
@@ -35,8 +36,11 @@ the included `router-view` component.
       - Add a path of `/:houseId/:memberId`.
       - Give it a name of **member**.
       - Add `props: true` to its route config.
-    - Test in Browser. Go to `/stark/jon-snow` and see if it shows te **url** in the template.
-2. Change the **.member** element's template to use a `router-link` component and create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props.
+    - Test in Browser. Go to `/stark/jon-snow` and see if it shows the **url** in the template.
+2. On the **Members** element
+    - Add **houseId** as a prop of type `String`
+    - Pass it from the`<house>` element to `<member>` via v-bind.
+    - Change the **.member** element's template to use a `router-link` component and create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props - `:to="{ name: 'member', params: { houseId: houseId, memberId: member.id } } }"`
 3. Test in the browser! Clicking a name in the dropdown should show the **MemberPage**
 4. Add a back button to the **WesterosMapPage** by using a `router-link`.
     
