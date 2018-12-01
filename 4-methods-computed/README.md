@@ -22,7 +22,7 @@ Methods in Vue.js allow for the creation of a cleaner and dryer code. Logic gets
 1. Move the visibility check in the `v-if` on `.members` to a method
     - Define an `isVisible` method on the Vue instance.
     - It should accept the `houseId` as a parameter 
-    - Return the result from comparing `houseId` param to the `currentHouse` data property.
+    - Return the result from comparing `houseId` param to the `currentHouse` data property. `this.currentHouse === houseId`
     - Test in Browser.
 
 #### BONUS: 

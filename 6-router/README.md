@@ -40,7 +40,7 @@ the included `router-view` component.
 2. On the **Members** element
     - Add **houseId** as a prop of type `String`
     - Pass it from the`<house>` element to `<member>` via v-bind.
-    - Change the **.member** element's template to use a `router-link` component and create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props - `:to="{ name: 'member', params: { houseId: houseId, memberId: member.id } } }"`
+    - Change the **.member** element's template to use a `router-link` component. This way you will create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props - `:to="{ name: 'member', params: { houseId: houseId, memberId: member.id } }"`
 3. Test in the browser! Clicking a name in the dropdown should show the **MemberPage**
 4. Add a back button to the **WesterosMapPage** by using a `router-link`.
     

@@ -16,7 +16,7 @@ Directives are a simple, yet key part of Vue.js development and will be used hea
 3. Inspect the `houses.js` file
 4. Using the **"houses.stark"** house from the `houses` variable.
     - Add a dynamic class on the `.house` div, binding it to `houses.stark.name`
-    - Transform to the `houses.stark.nae` to `toLowerCase` in the component.
+    - Transform to the `houses.stark.name` to `toLowerCase` in the component.
     - Check in Browser - Red dot should appear where the house should be.
 5. Add an `img` tag inside the `.house` div 
     - Bind the `src` attribute to **houses.stark.sigil**.
