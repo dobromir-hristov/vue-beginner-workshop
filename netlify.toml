@@ -1,6 +1,6 @@
 [build]
   # This is the directory to change to before starting a build.
-  base    = "7-cli-sfc/solution/"
+  base    = "final/"
   # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "/"
@@ -13,12 +13,12 @@
 
 [[redirects]]
   from = "/final/js/*"
-  to = "/7-cli-sfc/solution/dist/js/:splat"
+  to = "/final/dist/js/:splat"
   status = 200
 
  [[redirects]]
   from = "/final/*"
-  to = "/7-cli-sfc/solution/dist/index.html"
+  to = "/final/dist/index.html"
   status = 200
 
 [[headers]]
