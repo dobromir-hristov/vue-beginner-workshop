@@ -34,6 +34,7 @@ var houses = {
       { id: 'aerys-ii-targaryen', name: 'Aerys II Targaryen' },
       { id: 'aegon-targaryen', name: 'Aegon Targaryen' },
       { id: 'viserys-targaryen', name: 'Viserys Targaryen' },
+      { id: 'elena-gancheva', name: 'Elena Gancheva' },
       { id: 'aemon', name: 'Aemon' }
     ]
   },
@@ -46,7 +47,8 @@ var houses = {
       { id: 'tywin-lannister', name: 'Tywin Lannister' },
       { id: 'lancel-lannister', name: 'Lancel Lannister' },
       { id: 'kevan-lannister', name: 'Kevan Lannister' },
-      { id: 'joanna-lannister', name: 'Joanna Lannister' }
+      { id: 'joanna-lannister', name: 'Joanna Lannister' },
+      { id: 'hristiyan-ivanov', name: 'Hristiyan Ivanov' }
     ]
   },
   tyrell: {
@@ -69,6 +71,7 @@ var houses = {
       { id: 'renly-baratheon', name: 'Renly Baratheon' },
       { id: 'shireen-baratheon', name: 'Shireen Baratheon' },
       { id: 'selyse-baratheon', name: 'Selyse Baratheon' },
+      { id: 'dobromir-hristov', name: 'Dobromir Hristov' },
       { id: 'gendry', name: 'Gendry' }
     ]
   },
@@ -107,6 +110,17 @@ var houses = {
       { id: 'artys-i-arryn', name: 'Artys I Arryn' },
       { id: 'aemma-arryn', name: 'Aemma Arryn' },
       { id: 'ronnel-arryn', name: 'Ronnel Arryn' }
+    ]
+  },
+  frozen_kingdom: {
+    name: 'Frozen Kingdom',
+    sigil: 'https://workshop.vuebulgaria.com/assets/images/white-walkers.png',
+    members: [
+      { id: 'night-king', name: 'Night King' },
+      { id: 'night-queen', name: 'Night Queen' },
+      { id: 'white-walkers', name: 'White Walkers' },
+      { id: 'wights', name: 'Wights' },
+      { id: 'craster-last-son', name: 'Craster\'s last son' }
     ]
   }
 }

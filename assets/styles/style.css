@@ -110,6 +110,15 @@ a:hover {
   top: 52.9%;
   left: 65%;
 }
+.house.frozen_kingdom {
+  top: 8.3%;
+  right: 24%;
+  opacity: 0;
+  transition: all 1s linear 1s;
+}
+.house.frozen_kingdom:hover {
+  opacity: 1;
+}
 .members {
   background: #fff;
   border-radius: 2px;

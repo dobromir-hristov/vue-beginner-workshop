@@ -1,8 +1,7 @@
 export default {
   stark: {
     name: 'Stark',
-    sigil:
-      'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest',
+    sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest',
     members: [
       { id: 'eddard-stark', name: 'Eddard Stark' },
       { id: 'catelyn-stark', name: 'Catelyn Stark' },
@@ -16,8 +15,7 @@ export default {
   },
   tully: {
     name: 'Tully',
-    sigil:
-      'https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest',
+    sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest',
     members: [
       { id: 'catelyn-stark', name: 'Catelyn Stark' },
       { id: 'edmure-tully', name: 'Edmure Tully' },
@@ -43,8 +41,7 @@ export default {
   },
   lannister: {
     name: 'Lannister',
-    sigil:
-      'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest',
+    sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest',
     members: [
       { id: 'tyrion-lannister', name: 'Tyrion Lannister' },
       { id: 'jaime-lannister', name: 'Jaime Lannister' },
@@ -96,8 +93,7 @@ export default {
   },
   greyjoy: {
     name: 'Greyjoy',
-    sigil:
-      'https://vignette.wikia.nocookie.net/gameofthrones/images/8/86/House-Greyjoy-Main-Shield.PNG/revision/latest',
+    sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/86/House-Greyjoy-Main-Shield.PNG/revision/latest',
     members: [
       { id: 'yara-greyjoy', name: 'Yara Greyjoy' },
       { id: 'euron-greyjoy', name: 'Euron Greyjoy' },
@@ -110,8 +106,7 @@ export default {
   },
   arryn: {
     name: 'Arryn',
-    sigil:
-      'https://vignette.wikia.nocookie.net/gameofthrones/images/1/15/House-Arryn-Main-Shield.PNG/revision/latest',
+    sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/1/15/House-Arryn-Main-Shield.PNG/revision/latest',
     members: [
       { id: 'jon-arryn', name: 'Jon Arryn' },
       { id: 'lysa-arryn', name: 'Lysa Arryn' },
@@ -119,6 +114,17 @@ export default {
       { id: 'artys-i-arryn', name: 'Artys I Arryn' },
       { id: 'aemma-arryn', name: 'Aemma Arryn' },
       { id: 'ronnel-arryn', name: 'Ronnel Arryn' }
+    ]
+  },
+  frozen_kingdom: {
+    name: 'Frozen Kingdom',
+    sigil: 'https://workshop.vuebulgaria.com/assets/images/white-walkers.png',
+    members: [
+      { id: 'night-king', name: 'Night King' },
+      { id: 'night-queen', name: 'Night Queen' },
+      { id: 'white-walkers', name: 'White Walkers' },
+      { id: 'wights', name: 'Wights' },
+      { id: 'craster-last-son', name: 'Craster\'s last son' }
     ]
   }
 }

@@ -6,6 +6,7 @@ dropUp() {
 .house {
   position: absolute
   transform-origin: bottom center
+
   img {
     cursor: pointer
     width: 12vw
@@ -14,6 +15,7 @@ dropUp() {
       width: 5vw
     }
   }
+
   &:empty {
     /* only when the house has no content */
     height: 5vw
@@ -32,6 +34,7 @@ dropUp() {
     top: 29.08%
     left: 43%
   }
+
   &.tully {
     top: 60%
     left: 37.2%
@@ -70,6 +73,17 @@ dropUp() {
   &.arryn {
     top: 52.9%
     left: 65%
+  }
+
+  &.frozen_kingdom {
+    top: 8.3%;
+    right: 24%;
+    opacity: 0
+    transition: all 1s linear 1s;
+
+    &:hover {
+      opacity: 1
+    }
   }
 }
 
