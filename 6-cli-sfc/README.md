@@ -22,12 +22,12 @@ We will be using Vue CLI to transform those **.vue** files into browser readable
     - transform data to a factory function
 5. Import the data from `src/data/houses.js` to App.vue
 6. Move the **House** component definition to a **House.vue** file
-    - Copy the **House** definition and move it to `6-cli-sfc/base/src/components/House.vue`.
+    - Copy the **House** definition and move it to a script tag inside `6-cli-sfc/base/src/components/House.vue`.
     - Copy the **House** template from  the `#house-template` x-template to a `template` tag in **House.vue**
 7. Import **House.vue** into **App.vue** and register it as a local component.
     
 #### What you will do:
-1. Move the **Member** component definition to a **Member.vue** file
-    - Copy the **Member** definition and move it to `6-cli-sfc/base/src/components/Member.vue`.
-    - Copy the **Member** template from  the `#member-template` x-template to a `template` tag in **Member.vue**
-2. Import **Member.vue** into **House** and register it as a local component.
+1. Move the **Members** component definition to a **Members.vue** file
+    - Copy the **Members** definition and move it to a script tag inside `6-cli-sfc/base/src/components/Members.vue`.
+    - Copy the **Members** template from  the `#member-template` x-template to a `template` tag in **Members.vue**
+2. Import **Members.vue** into **House** and register it as a local component.
