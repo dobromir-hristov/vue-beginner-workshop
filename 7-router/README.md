@@ -12,12 +12,14 @@ Each page is a Vue Component that is registered only locally to the Router. Navi
     - Move all of the logic from `App.vue` to **views/WesterosMapPage.vue**.
     - Move the `.map` element and its children into a template tag on **WesterosMapPage.vue**.
     - Add a single `<router-view></router-view>` component, replacing `.map` in **App.vue**.
-2. Assign **WesterosMapPage** to the router as `\`
+2. Add **WesterosMapPage** to the router config
     - Import the **WesterosMapPage.vue** in `router.js`.
-    - Create a route object for **WesterosMapPage** with path leading to `/`. Give it a name of `home`.
+    - Create a route object for **WesterosMapPage** 
+        - Add a path leading to `/`. 
+        - Give it a name of **home**.
 3. Enable the router in main.js
     - Uncomment the router import and its assignment on the Vue Instance
-4. Test in the Browser
+4. Test in the Browser - Should see the App working as before.
 5. Define `houseId` as a prop on **Members**
 6. Pass the `houseId` as a prop from the **House** component down to the `Members`component.
 
@@ -37,7 +39,8 @@ Each page is a Vue Component that is registered only locally to the Router. Navi
       - Add `props: true` to its route config.
     - Test in Browser. Go to `/stark/jon-snow` and see if it shows the **url** in the template.
 2. On the **Members** component
-    - Change the **.member** element's template to use a `router-link` component. This way you will create a link to the **MemberPage**'s route passing `houseId` and `memberId` as props - `:to="{ name: 'member', params: { houseId: houseId, memberId: member.id } }"`
+    - Change the **.member** element's template to have a `<router-link>` component. This way you will create a link to the **MemberPage**'s route passing `houseId` and `memberId` 
+    as props - `:to="{ name: 'member', params: { houseId: houseId, memberId: member.id } }"`
 3. Test in the browser! Clicking a name in the dropdown should show the **MemberPage**
 4. Add a back button to the **WesterosMapPage** by using a `router-link`. - create a link to the home page - `<router-link :to={ name:'home' }">`
 

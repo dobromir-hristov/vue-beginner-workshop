@@ -24,7 +24,7 @@ You have two paths to choose from:
     - You need to scaffold a new project (steps below)
     
 ### CodeSandbox
-You can directly start using the [Chapter 7 Starter Sandbox](https://codesandbox.io/s/3qmjo9n8nm) on Codesandbox
+You can directly start using the [Chapter 6 Starter Sandbox](https://codesandbox.io/s/3qmjo9n8nm) on Codesandbox
 You can go directly to step 4.
 
 ### Vue CLI
@@ -44,7 +44,7 @@ Using vue cli, we will install a fresh project that we will transfer our compone
     - transform data to a factory function
 5. Import the data from `src/data/houses.js` to App.vue
 6. Move the **House** component definition to a **House.vue** file
-    - Copy the **House** definition and move it to a script tag inside `6-cli-sfc/base/src/components/House.vue`.
+    - Copy the **House** definition to a script tag inside `6-cli-sfc/base/src/components/House.vue`.
     - Copy the **House** template from  the `#house-template` x-template to a `template` tag in **House.vue**
 7. Import **House.vue** into **App.vue** and register it as a local component.
     

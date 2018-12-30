@@ -14,7 +14,8 @@ Components can communicate with each other by passing props down to child compon
 #### What I will do:
 1. Define a **House** component and move the `.house` element and required logic there
     - Register the **House** component on the main Vue instance as a local component.
-    - Create a `text/x-template` script with an id of `house-template` and move the `.house` and its child elements to it
+    - Create a `text/x-template` script with an id of `house-template` in `index.html` 
+        - move the `.house` element and its child elements to the newly defined template tag
     - Add a `<house>` element where the old `.house` class used to be
       - Keep the v-for and key on the `<house>` component and not inside the `#house-template` script.
     - **Props** defined on the **House** component
@@ -23,13 +24,13 @@ Components can communicate with each other by passing props down to child compon
       - **houseId** - _String_ - The houseId of the current house.
     - Pass the **house**, **currentHouse** and **houseId** props to the `<house>` component.
     - Move the `isVisible` method from the main Vue instance to a computed property on **House**.
-      - Remove the parameter and use `this.houseId` instead. 
-      - Update its usage on the `.members` div - it should not be a method call any more.
+      - Remove the function parameter and use `this.houseId` instead. 
+      - Update its usage on the `.members` div - it should not be a method call any more as its a property.
     - Bind a dynamic class to the `.house` element that sets a class equal to `houseId` and `is-active` based on `isVisible`. Use the array class binding syntax. `:class="[prop, { class1: prop1 }]"`
     - Check in Browser if **houses** are visible now.
     - Emit a `house-change` event when clicking the house
-      - Add a `@click` handler on the `.house` element that emits `house-change` and pass the `houseId` as a payload
-    - Catch the `@house-change` event on the `<house>` component and call the `showHouse` method.
+      - Add a `@click` handler on the `.house` element inside `#house-template` that emits `house-change` and pass the `houseId` as a payload
+    - Catch the `@house-change` event on the `<house>` component, in index.html, and call the `showHouse` method.
 
 #### What you will do:
 1. Define a **Members** component and move the `.members` element there

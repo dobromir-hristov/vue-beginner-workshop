@@ -14,7 +14,7 @@ Methods in Vue.js allow for the creation of a cleaner and dryer code. Logic gets
     - Define a `showHouse` method on the Vue instance
     - It should accept the `houseId` as a parameter
     - Copy the `currentHouse = houseId` logic
-    - Set `showHouse` as a the `.house` element's click expression. Pass the **houseId**.
+    - Set `showHouse` on the `.house` element's click handler. Pass the **houseId** as a parameter.
     - Check in the Browser. Make sure it shows the dropdown.
     - Use the `showHouse` method to hide the dropdown when clicking the `.map`.
 

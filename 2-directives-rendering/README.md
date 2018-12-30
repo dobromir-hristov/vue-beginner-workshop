@@ -13,7 +13,7 @@ Directives are a simple, yet key part of Vue.js development and will be used hea
 #### What I will do
 1. Add a div with a class of **map** as a child of `#app`.
 2. Create a div with a class of **house** inside `.map`
-3. Inspect the `houses.js` file
+3. Check the houses data structure below on section [Houses Structure](./README.md#houses-structure)
 4. Using the **"houses.stark"** house from the `houses` variable.
     - Add a dynamic class on the `.house` div, binding it to `houses.stark.name`
     - Transform to the `houses.stark.name` to `toLowerCase` in the component.
@@ -29,3 +29,21 @@ Directives are a simple, yet key part of Vue.js development and will be used hea
     - On the `.house` element change the class binding to **houseId**.
     - On the `img` element change the src binding to **house.sigil**.
     - Check in the Browser to see if you see all the houses and their sigils.
+
+
+#### Houses Structure
+```js
+    var houses = {
+      stark: {
+        name: 'Stark',
+        sigil: 'https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest',
+        members: [
+          { id: 'eddard-stark', name: 'Eddard Stark' },
+          { id: 'catelyn-stark', name: 'Catelyn Stark' },
+          { id: 'robb-stark', name: 'Robb Stark' },
+          // other
+        ]
+      },
+      // other houses
+    }
+```
