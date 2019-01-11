@@ -53,3 +53,4 @@ Using vue cli, we will install a fresh project that we will transfer our compone
     - Copy the **Members** definition and move it to a script tag inside `6-cli-sfc/base/src/components/Members.vue`.
     - Copy the **Members** template from  the `#member-template` x-template to a `template` tag in **Members.vue**
 2. Import **Members.vue** into **House** and register it as a local component.
+3. Test if all works in the Browser.
