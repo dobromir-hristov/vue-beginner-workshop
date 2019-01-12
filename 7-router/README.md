@@ -27,7 +27,7 @@ Each page is a Vue Component that is registered only locally to the Router. Navi
 1. Create a component called **MemberPage** that will represent each **Member**'s personal page.
     - Create a `views/MemberPage.vue` component.
     - Add a div with a class of `member-page` to its template.
-      - Add `{{$route.fullPath}}` inside `.member-page` - Do you know where does `$route` come from?
+      - Add `{{$route.fullPath}}` inside the element with a class of `.member-page` - Do you know where does `$route` come from?
     - **Props:**
       - **houseId** - String
       - **memberId** - String
